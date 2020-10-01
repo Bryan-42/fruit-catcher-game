@@ -41,35 +41,34 @@ class Game{
 
                 Player.getPlayerInfo();
                  image(back_img, 0, 0, 1000, 800);
-                 var x = 100;
-                 var y = 200;
+                 var x =100;
+                 var y=200;
                  var index =0;
                  drawSprites();
                  for(var plr in allPlayers){
                     
-
-
+                    
                      index = index+1;
-                     x = 500 - allPlayers[plr].distance;
-                     y = 500;
+                     x = 500-allPlayers[plr].distance;
+                     y=500;
                      
                      players[index -1].x = x;
                      players[index - 1].y = y;
                        
                      if(index === player.index){
                          
-                         fill("black");
-                         textSize(25);
-                         text(allPlayers[plr].name ,x-25,y+25);
-                        
+                        fill("black");
+                        textSize(25);
+                        text(allPlayers[plr].name ,x-25,y+25);
+
                          
                      }
-
+                    
                      textSize(25);
                      fill("white");
                      text("player 1 : " + allPlayers.player1.score , 50,50);
                      text("player 2 : " + allPlayers.player2.score , 50,100);
-
+                 
                  }
                 
                 
@@ -85,9 +84,8 @@ class Game{
                 }
             
                  if (frameCount % 20 === 0) {
-                     fruits = createSprite(500, 10, 100, 100);
+                     fruits = createSprite(random(100, 1000), 0, 100, 100);
                      fruits.velocityY = 6;
-                     fruits.x = Math.round(random(100,1000));
                      var rand = Math.round(random(1,5));
                      switch(rand){
                          case 1: fruits.addImage("fruit1",fruit1_img);
@@ -111,9 +109,9 @@ class Game{
                             fruitGroup.get(i).destroy();
                             player.score = player.score+1;
                             player.update();
+                        }
+                    }
                   }
-                }
-            }
                 
 
          
